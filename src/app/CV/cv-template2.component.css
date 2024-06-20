@@ -1,0 +1,51 @@
+.cv-template2 {
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #333;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cv-template2 header {
+  text-align: center;
+  border-bottom: 2px solid #444;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.cv-template2 h1 {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+.cv-template2 p {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.cv-template2 h2 {
+  font-size: 1.8em;
+  color: #555;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+.cv-template2 ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cv-template2 ul li {
+  margin: 10px 0;
+}
+
+.cv-template2 ul li span.degree, .cv-template2 ul li span.position {
+  font-weight: bold;
+}
+
+.cv-template2 ul li span.institution, .cv-template2 ul li span.company {
+  font-style: italic;
+}

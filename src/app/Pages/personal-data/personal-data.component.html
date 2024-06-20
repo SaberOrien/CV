@@ -1,0 +1,37 @@
+<div class="personal-data-container">
+  <h2>Dane osobowe</h2>
+  <form (submit)="onSubmit()">
+    <div class="row">
+      <div class="form-group">
+        <label for="firstName">Imię</label>
+        <input type="text" id="firstName" name="firstName" [(ngModel)]="personalData.firstName">
+        <div class="error" *ngIf="validationErrors.firstName">{{ validationErrors.firstName }}</div>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Nazwisko</label>
+        <input type="text" id="lastName" name="lastName" [(ngModel)]="personalData.lastName">
+        <div class="error" *ngIf="validationErrors.lastName">{{ validationErrors.lastName }}</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" [(ngModel)]="personalData.email">
+        <div class="error" *ngIf="validationErrors.email">{{ validationErrors.email }}</div>
+      </div>
+      <div class="form-group">
+        <label for="phone">Telefon</label>
+        <input type="text" id="phone" name="phone" [(ngModel)]="personalData.phone">
+        <div class="error" *ngIf="validationErrors.phone">{{ validationErrors.phone }}</div>
+      </div>
+    </div>
+    <div class="profile-picture">
+      <label for="profilePicture">Zdjęcie profilowe</label>
+      <div class="upload-box">
+        Kliknij by załadować zdjęcie
+        <input type="file" id="profilePicture" (change)="onFileSelected($event)">
+      </div>
+    </div>
+    <button type="submit">Dalej</button>
+  </form>
+</div>

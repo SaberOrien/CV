@@ -1,0 +1,42 @@
+<div class="top-bar-container">
+  <div class="top-bar-top-bar">
+    <span class="top-bar-text"><span>Curriculum Vitae</span></span>
+    <img src="/assets/external/line12051-rfyi.svg" alt="Line12051" class="top-bar-line1" />
+    <div class="top-bar-frame9">
+      <div class="top-bar-frame1" [routerLink]="['/personal-data']" (click)="onNavigate('personal-data')" [ngClass]="getClass('personal-data')">
+        <img [src]="getImage('personalData', 'icon')" alt="VectorI205" class="top-bar-vector" />
+        <span class="top-bar-text02"><span>Dane osobowe</span></span>
+      </div>
+      <img [src]="getImage('personalData', 'line')" alt="Frame10I205" class="top-bar-frame10" />
+      <div class="top-bar-frame2" [routerLink]="['/education']" (click)="onNavigate('education')" [ngClass]="getClass('education')">
+        <img [src]="getImage('education', 'icon')" alt="VectorI205" class="top-bar-vector1" />
+        <span class="top-bar-text04"><span>Wykształcenie</span></span>
+      </div>
+      <img [src]="getImage('education', 'line')" alt="Frame11I205" class="top-bar-frame11" />
+      <div class="top-bar-frame3" [routerLink]="['/work-experience']" (click)="onNavigate('work-experience')" [ngClass]="getClass('work-experience')">
+        <img [src]="getImage('workExperience', 'icon')" alt="VectorI205" class="top-bar-vector2" />
+        <span class="top-bar-text06"><span>Doświadczenie</span></span>
+      </div>
+      <img [src]="getImage('workExperience', 'line')" alt="Frame12I205" class="top-bar-frame12" />
+      <div class="top-bar-frame4" [routerLink]="['/skills']" (click)="onNavigate('skills')" [ngClass]="getClass('skills')">
+        <img [src]="getImage('skills', 'icon')" alt="VectorI205" class="top-bar-vector3" />
+        <span class="top-bar-text08"><span>Umiejętności</span></span>
+      </div>
+      <img [src]="getImage('skills', 'line')" alt="Frame13I205" class="top-bar-frame13" />
+      <div class="top-bar-frame5" [routerLink]="['/languages']" (click)="onNavigate('languages')" [ngClass]="getClass('languages')">
+        <img [src]="getImage('languages', 'icon')" alt="VectorI205" class="top-bar-vector4" />
+        <span class="top-bar-text10"><span>Języki</span></span>
+      </div>
+      <img [src]="getImage('languages', 'line')" alt="Frame14I205" class="top-bar-frame14" />
+      <div class="top-bar-frame6" [routerLink]="['/traits']" (click)="onNavigate('traits')" [ngClass]="getClass('traits')">
+        <img [src]="getImage('traits', 'icon')" alt="VectorI205" class="top-bar-vector5" />
+        <span class="top-bar-text12"><span>Cechy</span></span>
+      </div>
+      <img [src]="getImage('traits', 'line')" alt="Frame16I205" class="top-bar-frame16" />
+      <div class="top-bar-frame8" [routerLink]="['/download']" [ngClass]="getClass('download')">
+        <img [src]="getImage('download', 'icon')" alt="VectorI205" class="top-bar-vector6" />
+        <span class="top-bar-text14"><span>Pobierz</span></span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+app-personal-data, app-education, app-work-experience, app-skills, app-languages, app-traits {
+  width: 40%;
+}
+
+app-education, app-work-experience, app-skills, app-languages, app-traits {
+  padding: 15px 50px 30px 50px;
+}
+
+
+
+app-sidebar {
+  background-color: #423DA4;
+  padding: 15px 30px;
+  width: 20%;
+}
+
+app-cv {
+  width: 40%;
+}
+
+body {
+  margin: 0;
+}

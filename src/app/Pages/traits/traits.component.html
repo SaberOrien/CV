@@ -1,0 +1,28 @@
+<app-hint-box [hintText]="'Jeśli jakiejś cechy nie ma na liście, dodaj ją samodzielnie!'"></app-hint-box>
+<h2>Cechy</h2>
+<div class="form-wrapper">
+  <div class="predefined-traits">
+    <button type="button"
+            *ngFor="let trait of predefinedTraits"
+            (click)="togglePredefinedTrait(trait)"
+            [class.selected]="trait.selected"
+            class="trait-button">{{trait.name}}</button>
+  </div>
+  <form (ngSubmit)="onSubmit()">
+    <div *ngFor="let trait of traitsList; let i = index" class="trait-entry">
+      <div class="form-group">
+        <label for="trait-{{i}}">Cecha #{{i + 1}}</label>
+        <input type="text" id="trait-{{i}}" name="trait-{{i}}" [(ngModel)]="trait.trait" required>
+        <div class="error" *ngIf="validationErrors[i]?.trait">{{ validationErrors[i].trait }}</div>
+      </div>
+      <div class="form-group remove-group">
+        <button type="button" class="remove-button" (click)="removeTrait(i)">Usuń</button>
+      </div>
+    </div>
+    <button type="button" (click)="addTrait()">Dodaj kolejną cechę</button>
+    <div class="form-buttons">
+      <button type="button" class="back-button" (click)="navigateTo('languages')">Wróć</button>
+      <button type="submit" class="next-button">Dalej</button>
+    </div>
+  </form>
+</div>

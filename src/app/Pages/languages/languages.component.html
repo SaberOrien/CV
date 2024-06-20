@@ -1,0 +1,28 @@
+<app-hint-box [hintText]="'Dodaj języki, które znasz i określ swój poziom zaawansowania.'"></app-hint-box>
+<h2>Języki</h2>
+<div class="form-wrapper">
+  <form (ngSubmit)="onSubmit()">
+    <div *ngFor="let language of languagesList; let i = index" class="language-entry">
+      <div class="form-group">
+        <label for="languageName-{{i}}">Język #{{i + 1}}</label>
+        <input type="text" id="languageName-{{i}}" name="languageName-{{i}}" [(ngModel)]="language.languageName" required>
+        <div class="error" *ngIf="validationErrors[i]?.languageName">{{ validationErrors[i].languageName }}</div>
+      </div>
+      <div class="form-group">
+        <label for="languageProficiency-{{i}}">Poziom zaawansowania</label>
+        <select id="languageProficiency-{{i}}" name="languageProficiency-{{i}}" [(ngModel)]="language.languageProficiency" required>
+          <option *ngFor="let level of languageProficiencies" [value]="level">{{level}}</option>
+        </select>
+        <div class="error" *ngIf="validationErrors[i]?.languageProficiency">{{ validationErrors[i].languageProficiency }}</div>
+      </div>
+      <div class="form-group remove-group">
+        <button type="button" class="remove-button" (click)="removeLanguage(i)">Usuń</button>
+      </div>
+    </div>
+    <button type="button" (click)="addLanguage()">Dodaj kolejny język</button>
+    <div class="form-buttons">
+      <button type="button" class="back-button" (click)="navigateTo('skills')">Wróć</button>
+      <button type="submit" class="next-button">Dalej</button>
+    </div>
+  </form>
+</div>

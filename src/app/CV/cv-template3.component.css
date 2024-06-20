@@ -1,0 +1,53 @@
+.cv-template3 {
+  font-family: 'Times New Roman', serif;
+  color: #222;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 25px;
+  background-color: #fdfdfd;
+  border: 1px solid #e0e0e0;
+}
+
+.cv-template3 header {
+  text-align: left;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+}
+
+.cv-template3 h1 {
+  font-size: 2.3em;
+  margin: 0;
+}
+
+.cv-template3 p {
+  font-size: 1.1em;
+  margin: 0;
+}
+
+.cv-template3 h2 {
+  font-size: 1.7em;
+  color: #333;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 3px;
+  margin-bottom: 15px;
+}
+
+.cv-template3 ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cv-template3 ul li {
+  margin: 12px 0;
+}
+
+.cv-template3 ul li .degree, .cv-template3 ul li .position {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.cv-template3 ul li .institution, .cv-template3 ul li .company {
+  font-style: italic;
+  color: #555;
+}

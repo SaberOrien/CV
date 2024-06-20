@@ -1,0 +1,52 @@
+<app-hint-box [hintText]="'Dostosuj CV do oferty pracy, wybierając najwłaściwsze doświadczenie zawodowe'"></app-hint-box>
+<h2>Doświadczenie zawodowe</h2>
+<div class="form-wrapper">
+  <form (ngSubmit)="onSubmit()">
+    <div *ngFor="let work of workExperienceList; let i = index" class="work-entry">
+      <div class="form-group">
+        <label for="company-{{i}}">Nazwa firmy</label>
+        <input type="text" id="company-{{i}}" name="company-{{i}}" [(ngModel)]="work.company" required>
+        <div class="error" *ngIf="validationErrors[i]?.company">{{ validationErrors[i].company }}</div>
+      </div>
+      <div class="form-group">
+        <label for="city-{{i}}">Miasto</label>
+        <input type="text" id="city-{{i}}" name="city-{{i}}" [(ngModel)]="work.city" required>
+        <div class="error" *ngIf="validationErrors[i]?.city">{{ validationErrors[i].city }}</div>
+      </div>
+      <div class="form-group">
+        <label for="position-{{i}}">Stanowisko</label>
+        <input type="text" id="position-{{i}}" name="position-{{i}}" [(ngModel)]="work.position" required>
+        <div class="error" *ngIf="validationErrors[i]?.position">{{ validationErrors[i].position }}</div>
+      </div>
+      <div class="form-group">
+        <label for="responsibilities-{{i}}">Obowiązki</label>
+        <textarea id="responsibilities-{{i}}" name="responsibilities-{{i}}" [(ngModel)]="work.responsibilities" required></textarea>
+        <div class="error" *ngIf="validationErrors[i]?.responsibilities">{{ validationErrors[i].responsibilities }}</div>
+      </div>
+      <div class="form-group date-group">
+        <div>
+          <label for="startDate-{{i}}">Od</label>
+          <input type="date" id="startDate-{{i}}" name="startDate-{{i}}" [(ngModel)]="work.startDate" required>
+          <div class="error" *ngIf="validationErrors[i]?.startDate">{{ validationErrors[i].startDate }}</div>
+        </div>
+        <div>
+          <label for="endDate-{{i}}">Do</label>
+          <input type="date" id="endDate-{{i}}" name="endDate-{{i}}" [(ngModel)]="work.endDate" [disabled]="work.currentlyWorking">
+          <div class="error" *ngIf="validationErrors[i]?.endDate">{{ validationErrors[i].endDate }}</div>
+        </div>
+      </div>
+      <div class="form-group checkbox-group">
+        <label for="currentlyWorking-{{i}}">Obecnie</label>
+        <input type="checkbox" id="currentlyWorking-{{i}}" name="currentlyWorking-{{i}}" [(ngModel)]="work.currentlyWorking" (change)="onCurrentlyWorkingChange(i)">
+      </div>
+      <div class="form-group remove-group">
+        <button type="button" class="remove-button" (click)="removeWorkExperience(i)">Usuń</button>
+      </div>
+    </div>
+    <button type="button" (click)="addWorkExperience()">Dodaj kolejne doświadczenie</button>
+    <div class="form-buttons">
+      <button type="button" class="back-button" (click)="navigateTo('education')">Wróć</button>
+      <button type="submit" class="next-button">Dalej</button>
+    </div>
+  </form>
+</div>

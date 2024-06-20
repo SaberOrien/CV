@@ -1,0 +1,52 @@
+<app-hint-box [hintText]="'Dostosuj CV do oferty pracy, wybierając najwłaściwszą edukację'"></app-hint-box>
+<h2>Wykształcenie</h2>
+<div class="form-wrapper">
+  <form (ngSubmit)="onSubmit()">
+    <div *ngFor="let education of educationList; let i = index" class="education-entry">
+      <div class="form-group">
+        <label for="institution-{{i}}">Nazwa Uczelni</label>
+        <input type="text" id="institution-{{i}}" name="institution-{{i}}" [(ngModel)]="education.institution" required>
+        <div class="error" *ngIf="validationErrors[i]?.institution">{{ validationErrors[i].institution }}</div>
+      </div>
+      <div class="form-group">
+        <label for="city-{{i}}">Miasto</label>
+        <input type="text" id="city-{{i}}" name="city-{{i}}" [(ngModel)]="education.city" required>
+        <div class="error" *ngIf="validationErrors[i]?.city">{{ validationErrors[i].city }}</div>
+      </div>
+      <div class="form-group">
+        <label for="fieldOfStudy-{{i}}">Kierunek Studiów</label>
+        <input type="text" id="fieldOfStudy-{{i}}" name="fieldOfStudy-{{i}}" [(ngModel)]="education.fieldOfStudy" required>
+        <div class="error" *ngIf="validationErrors[i]?.fieldOfStudy">{{ validationErrors[i].fieldOfStudy }}</div>
+      </div>
+      <div class="form-group">
+        <label for="degree-{{i}}">Stopień naukowy</label>
+        <input type="text" id="degree-{{i}}" name="degree-{{i}}" [(ngModel)]="education.degree" required>
+        <div class="error" *ngIf="validationErrors[i]?.degree">{{ validationErrors[i].degree }}</div>
+      </div>
+      <div class="form-group date-group">
+        <div>
+          <label for="startDate-{{i}}">Od</label>
+          <input type="date" id="startDate-{{i}}" name="startDate-{{i}}" [(ngModel)]="education.startDate" required>
+          <div class="error" *ngIf="validationErrors[i]?.startDate">{{ validationErrors[i].startDate }}</div>
+        </div>
+        <div>
+          <label for="endDate-{{i}}">Do</label>
+          <input type="date" id="endDate-{{i}}" name="endDate-{{i}}" [(ngModel)]="education.endDate" [disabled]="education.currentlyStudying">
+          <div class="error" *ngIf="validationErrors[i]?.endDate">{{ validationErrors[i].endDate }}</div>
+        </div>
+      </div>
+      <div class="form-group checkbox-group">
+        <label for="currentlyStudying-{{i}}">Obecnie</label>
+        <input type="checkbox" id="currentlyStudying-{{i}}" name="currentlyStudying-{{i}}" [(ngModel)]="education.currentlyStudying" (change)="onCurrentlyStudyingChange(i)">
+      </div>
+      <div class="form-group remove-group">
+        <button type="button" class="remove-button" (click)="removeEducation(i)">Usuń</button>
+      </div>
+    </div>
+    <button type="button" (click)="addEducation()">Dodaj kolejne wykształcenie</button>
+    <div class="form-buttons">
+      <button type="button" class="back-button" (click)="navigateTo('personal-data')">Wróć</button>
+      <button type="submit" class="next-button">Dalej</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,28 @@
+<app-hint-box [hintText]="'Dostosuj swoje umiejętności do potrzeb pracodawcy.'"></app-hint-box>
+<h2>Umiejętności</h2>
+<div class="form-wrapper">
+  <form (ngSubmit)="onSubmit()">
+    <div *ngFor="let skill of skillsList; let i = index" class="skill-entry">
+      <div class="form-group">
+        <label for="skillName-{{i}}">Umiejętność #{{i + 1}}</label>
+        <input type="text" id="skillName-{{i}}" name="skillName-{{i}}" [(ngModel)]="skill.skillName" required>
+        <div class="error" *ngIf="validationErrors[i]?.skillName">{{ validationErrors[i].skillName }}</div>
+      </div>
+      <div class="form-group">
+        <label for="skillLevel-{{i}}">Poziom</label>
+        <select id="skillLevel-{{i}}" name="skillLevel-{{i}}" [(ngModel)]="skill.skillLevel" required>
+          <option *ngFor="let level of skillLevels" [value]="level">{{level}}</option>
+        </select>
+        <div class="error" *ngIf="validationErrors[i]?.skillLevel">{{ validationErrors[i].skillLevel }}</div>
+      </div>
+      <div class="form-group remove-group">
+        <button type="button" class="remove-button" (click)="removeSkill(i)">Usuń</button>
+      </div>
+    </div>
+    <button type="button" (click)="addSkill()">Dodaj kolejną umiejętność</button>
+    <div class="form-buttons">
+      <button type="button" class="back-button" (click)="navigateTo('work-experience')">Wróć</button>
+      <button type="submit" class="next-button">Dalej</button>
+    </div>
+  </form>
+</div>

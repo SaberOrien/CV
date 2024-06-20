@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="template-selector">
+    <button (click)="selectedTemplate = 'template1'">Template 1</button>
+    <button (click)="selectedTemplate = 'template2'">Template 2</button>
+    <button (click)="selectedTemplate = 'template3'">Template 3</button>
+  </div>
+
+  <ng-container *ngIf="selectedTemplate === 'template1'">
+    <app-cv-template1
+      [personalData]="personalData"
+      [educationList]="educationList"
+      [workExperienceList]="workExperienceList"
+      [skillsList]="skillsList"
+      [languagesList]="languagesList"
+      [traitsList]="traitsList">
+    </app-cv-template1>
+  </ng-container>
+  <ng-container *ngIf="selectedTemplate === 'template2'">
+    <app-cv-template2
+      [personalData]="personalData"
+      [educationList]="educationList"
+      [workExperienceList]="workExperienceList"
+      [skillsList]="skillsList"
+      [languagesList]="languagesList"
+      [traitsList]="traitsList">
+    </app-cv-template2>
+  </ng-container>
+  <ng-container *ngIf="selectedTemplate === 'template3'">
+    <app-cv-template3
+      [personalData]="personalData"
+      [educationList]="educationList"
+      [workExperienceList]="workExperienceList"
+      [skillsList]="skillsList"
+      [languagesList]="languagesList"
+      [traitsList]="traitsList">
+    </app-cv-template3>
+  </ng-container>
+</div>

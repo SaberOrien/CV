@@ -1,0 +1,32 @@
+.hint-box {
+  display: flex;
+  align-items: center;
+  border: 2px dashed #9b59b6; /* Adjust color as needed */
+  padding: 10px;
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.hint-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.hint-content strong {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.hint-content p {
+  margin: 0;
+  font-size: 14px;
+}

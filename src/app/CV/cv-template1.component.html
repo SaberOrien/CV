@@ -1,0 +1,54 @@
+<div class="cv-template1">
+  <h1>Curriculum Vitae</h1>
+  <section>
+    <h2>Personal Data</h2>
+    <p>Name: {{ personalData.firstName }} {{ personalData.lastName }}</p>
+    <p>Email: {{ personalData.email }}</p>
+    <p>Phone: {{ personalData.phone }}</p>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <ul>
+      <li *ngFor="let education of educationList">
+        <strong>{{ education.degree }}</strong> from {{ education.institution }} in {{ education.city }}
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Work Experience</h2>
+    <ul>
+      <li *ngFor="let work of workExperienceList">
+        <strong>{{ work.position }}</strong> at {{ work.company }} in {{ work.city }}
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <ul>
+      <li *ngFor="let skill of skillsList">
+        {{ skill.skillName }} - {{ skill.skillLevel }}
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Languages</h2>
+    <ul>
+      <li *ngFor="let language of languagesList">
+        {{ language.languageName }} - {{ language.languageProficiency }}
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Traits</h2>
+    <ul>
+      <li *ngFor="let trait of traitsList">
+        {{ trait.trait }}
+      </li>
+    </ul>
+  </section>
+</div>
